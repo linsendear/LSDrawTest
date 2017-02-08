@@ -44,6 +44,10 @@
 /////////////////////////////////////////////////////////////////////////////////////
 
 @interface LSDrawView()
+{
+    CGPoint pts[5];
+    uint ctr;
+}
 
 //背景View
 @property (nonatomic, strong) UIImageView *bgImgView;
@@ -57,6 +61,11 @@
 @property (nonatomic, strong) NSMutableArray *undoArray;
 //重做容器
 @property (nonatomic, strong) NSMutableArray *redoArray;
+
+
+
+//@property (nonatomic, strong) NSMutableArray *pts;
+//@property (nonatomic, assign) NSInteger ctr;
 
 @end
 
@@ -115,6 +124,9 @@
     
     //每次画线前，都清除重做列表。
     [self cleanRedoArray];
+    
+    ctr = 0;
+    pts[0] = point;
 
 }
 
@@ -135,7 +147,21 @@
         switch (_shapeType)
         {
             case LSShapeCurve:
-                [brush.bezierPath addLineToPoint:point];
+//                [brush.bezierPath addLineToPoint:point];
+            
+                ctr++;
+                pts[ctr] = point;
+                if (ctr == 4)
+                {
+                    pts[3] = CGPointMake((pts[2].x + pts[4].x)/2.0, (pts[2].y + pts[4].y)/2.0);
+                    
+                    [brush.bezierPath moveToPoint:pts[0]];
+                    [brush.bezierPath addCurveToPoint:pts[3] controlPoint1:pts[1] controlPoint2:pts[2]];
+                    pts[0] = pts[3]; 
+                    pts[1] = pts[4]; 
+                    ctr = 1;
+                }
+                
                 break;
                 
             case LSShapeLine:
@@ -164,7 +190,20 @@
 
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
-    [self touchesMoved:touches withEvent:event];
+    uint count = ctr;
+    if (count <= 4 && _shapeType == LSShapeCurve)
+    {
+        for (int i = 4; i > count; i--)
+        {
+            [self touchesMoved:touches withEvent:event];
+        }
+        ctr = 0;
+    }
+    else
+    {
+        [self touchesMoved:touches withEvent:event];
+    }
+    
     
 //    CGPoint point = [[touches anyObject] locationInView:self];
 //    
@@ -178,6 +217,10 @@
     [_canvasView setBrush:nil];
     //保存到存储，撤销用。
     [self saveTempPic:img];
+    
+    
+    
+    
 }
 
 - (void)touchesCancelled:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
