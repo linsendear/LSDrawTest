@@ -18,11 +18,6 @@
  也针对这两个demo做了相应的优化
  
  TODO:
- 1、撤销数组设置最大值
- 
- 2、优化曲线的绘制
- 
- 3、等等
  
  结构：由上至下
  
@@ -78,9 +73,9 @@ typedef NS_ENUM(NSInteger, LSShapeType)
 //路径
 @property (nonatomic, strong) UIBezierPath *bezierPath;
 
-//
+//起点
 @property (nonatomic, assign) CGPoint beginPoint;
-
+//终点
 @property (nonatomic, assign) CGPoint endPoint;
 
 @end
@@ -109,12 +104,13 @@ typedef NS_ENUM(NSInteger, LSShapeType)
 //背景图
 @property (assign, nonatomic) UIImage *backgroundImage;
 
+//撤销
 - (void)unDo;
-
+//重做
 - (void)reDo;
-
+//保存到相册
 - (void)save;
-
+//清除绘制
 - (void)clean;
 
 //- (void)canUndo;
