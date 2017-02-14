@@ -3,11 +3,11 @@
 iOS 画板/涂鸦 你画我猜 demo
 
 录制脚本：
-
+![image](https://github.com/linsendear/LSDrawTest/blob/master/003.gif ) 
 
 播放脚本：
 
-
+![image](https://github.com/linsendear/LSDrawTest/blob/master/004.gif ) 
 
 
 这个demo参考了下面两个项目
