@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		985027551E52C65800FECEAE /* 003.gif in Resources */ = {isa = PBXBuildFile; fileRef = 985027541E52C65800FECEAE /* 003.gif */; };
+		985027571E52C66000FECEAE /* 004.gif in Resources */ = {isa = PBXBuildFile; fileRef = 985027561E52C66000FECEAE /* 004.gif */; };
 		987367DA1E4DBC610033A896 /* NSObject+YYModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 987367D61E4DBC610033A896 /* NSObject+YYModel.m */; };
 		987367DB1E4DBC610033A896 /* YYClassInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 987367D81E4DBC610033A896 /* YYClassInfo.m */; };
 		987367DE1E4DBC790033A896 /* LJBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 987367DD1E4DBC790033A896 /* LJBaseModel.m */; };
@@ -20,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		985027541E52C65800FECEAE /* 003.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 003.gif; sourceTree = "<group>"; };
+		985027561E52C66000FECEAE /* 004.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 004.gif; sourceTree = "<group>"; };
 		987367D51E4DBC610033A896 /* NSObject+YYModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+YYModel.h"; sourceTree = "<group>"; };
 		987367D61E4DBC610033A896 /* NSObject+YYModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+YYModel.m"; sourceTree = "<group>"; };
 		987367D71E4DBC610033A896 /* YYClassInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYClassInfo.h; sourceTree = "<group>"; };
@@ -69,6 +73,8 @@
 		98AA63A61E499FE600AA573D = {
 			isa = PBXGroup;
 			children = (
+				985027541E52C65800FECEAE /* 003.gif */,
+				985027561E52C66000FECEAE /* 004.gif */,
 				987367D41E4DBC600033A896 /* YYModel */,
 				98AA63C91E49A0A700AA573D /* LSDrawView.h */,
 				98AA63CA1E49A0A700AA573D /* LSDrawView.m */,
@@ -170,6 +176,8 @@
 			files = (
 				98AA63C21E499FE600AA573D /* LaunchScreen.storyboard in Resources */,
 				98AA63BF1E499FE600AA573D /* Assets.xcassets in Resources */,
+				985027551E52C65800FECEAE /* 003.gif in Resources */,
+				985027571E52C66000FECEAE /* 004.gif in Resources */,
 				98AA63BD1E499FE600AA573D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
