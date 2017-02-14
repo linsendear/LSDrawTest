@@ -17,7 +17,6 @@
  
  也针对这两个demo做了相应的优化
  
- TODO:
  
  结构：由上至下
  
@@ -32,6 +31,19 @@
  
  ps:
  没使用drawrect
+ 
+ //linyl 标记的代码都是跟录制脚本和绘制脚本相关
+ 
+ 还需要优化的地方：
+ 1、当前的记录方式是用归档的方式，每次有动作（撤销，重做，保存，清空）和每次的touchsend
+ 后，都会记录成一个LSDrawPackage对象，如果想使用socket时，这里可以改为每0.5秒一个LSDrawPackage对象
+ ，也就是说，每个LSDrawPackage对象都是一段时间内的绘制和操作。
+ 
+ 2、线程处理
+    demo中使用的是performselector的方式，这里还需要优化。
+ 
+ 3、当前的绘制端和显示端公用了很多的内部结构
+ 
  */
 
 #import <UIKit/UIKit.h>
@@ -112,6 +124,12 @@ typedef NS_ENUM(NSInteger, LSShapeType)
 - (void)save;
 //清除绘制
 - (void)clean;
+
+
+//录制脚本
+- (void)testRecToFile;
+//绘制脚本
+- (void)testPlayFromFile;
 
 //- (void)canUndo;
 //

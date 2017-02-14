@@ -42,20 +42,12 @@
     
     //工具栏
     
-    UIButton *btnEraser = [UIButton buttonWithType:UIButtonTypeCustom];
-    btnEraser.backgroundColor = [UIColor orangeColor];
-    btnEraser.frame = CGRectMake(20, 20, 60, 20);
-    [btnEraser setTitle:@"橡皮擦" forState:UIControlStateNormal];
-    [btnEraser setTitle:@"画笔" forState:UIControlStateSelected];
     
-    [btnEraser addTarget:self action:@selector(btnEraserClicked:) forControlEvents:UIControlEventTouchUpInside];
-    
-    [self.view addSubview:btnEraser];
     
     
     UIButton *btnUndo = [UIButton buttonWithType:UIButtonTypeCustom];
     btnUndo.backgroundColor = [UIColor orangeColor];
-    btnUndo.frame = CGRectMake(100, 20, 60, 20);
+    btnUndo.frame = CGRectMake(20, 20, 60, 20);
     [btnUndo setTitle:@"撤销" forState:UIControlStateNormal];
     
     [btnUndo addTarget:self action:@selector(btnUndoClicked:) forControlEvents:UIControlEventTouchUpInside];
@@ -65,7 +57,7 @@
     
     UIButton *btnRedo = [UIButton buttonWithType:UIButtonTypeCustom];
     btnRedo.backgroundColor = [UIColor orangeColor];
-    btnRedo.frame = CGRectMake(180, 20, 60, 20);
+    btnRedo.frame = CGRectMake(100, 20, 60, 20);
     [btnRedo setTitle:@"重做" forState:UIControlStateNormal];
     
     [btnRedo addTarget:self action:@selector(btnRedoClicked:) forControlEvents:UIControlEventTouchUpInside];
@@ -75,12 +67,21 @@
     
     UIButton *btnSave = [UIButton buttonWithType:UIButtonTypeCustom];
     btnSave.backgroundColor = [UIColor orangeColor];
-    btnSave.frame = CGRectMake(260, 20, 60, 20);
+    btnSave.frame = CGRectMake(180, 20, 60, 20);
     [btnSave setTitle:@"保存" forState:UIControlStateNormal];
     
     [btnSave addTarget:self action:@selector(btnSaveClicked:) forControlEvents:UIControlEventTouchUpInside];
     
     [self.view addSubview:btnSave];
+    
+    UIButton *btnClean = [UIButton buttonWithType:UIButtonTypeCustom];
+    btnClean.backgroundColor = [UIColor orangeColor];
+    btnClean.frame = CGRectMake(260, 20, 60, 20);
+    [btnClean setTitle:@"清除" forState:UIControlStateNormal];
+    
+    [btnClean addTarget:self action:@selector(btnCleanClicked:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.view addSubview:btnClean];
     
     
     
@@ -123,13 +124,57 @@
     
     [self.view addSubview:btnRect];
     
+    
+    UIButton *btnRec = [UIButton buttonWithType:UIButtonTypeCustom];
+    btnRec.backgroundColor = [UIColor orangeColor];
+    btnRec.frame = CGRectMake(20, 80, 60, 20);
+    [btnRec setTitle:@"录制" forState:UIControlStateNormal];
+    
+    [btnRec addTarget:self action:@selector(btnRecClicked:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.view addSubview:btnRec];
+    
+    UIButton *btnPlay = [UIButton buttonWithType:UIButtonTypeCustom];
+    btnPlay.backgroundColor = [UIColor orangeColor];
+    btnPlay.frame = CGRectMake(100, 80, 60, 20);
+    [btnPlay setTitle:@"绘制" forState:UIControlStateNormal];
+    
+    [btnPlay addTarget:self action:@selector(btnPlayClicked:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.view addSubview:btnPlay];
+    
+    UIButton *btnEraser = [UIButton buttonWithType:UIButtonTypeCustom];
+    btnEraser.backgroundColor = [UIColor orangeColor];
+    btnEraser.frame = CGRectMake(180, 80, 60, 20);
+    [btnEraser setTitle:@"橡皮擦" forState:UIControlStateNormal];
+    [btnEraser setTitle:@"画笔" forState:UIControlStateSelected];
+    
+    [btnEraser addTarget:self action:@selector(btnEraserClicked:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.view addSubview:btnEraser];
+    
+    
+}
+
+- (void)btnRecClicked:(id)sender
+{
+    [drawView testRecToFile];
+}
+
+- (void)btnPlayClicked:(id)sender
+{
+    [drawView testPlayFromFile];
 }
 
 
 - (void)btnSaveClicked:(id)sender
 {
     [drawView save];
-//    [drawView clean];
+}
+
+- (void)btnCleanClicked:(id)sender
+{
+    [drawView clean];
 }
 
 

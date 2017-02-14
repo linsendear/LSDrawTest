@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		987367DA1E4DBC610033A896 /* NSObject+YYModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 987367D61E4DBC610033A896 /* NSObject+YYModel.m */; };
+		987367DB1E4DBC610033A896 /* YYClassInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 987367D81E4DBC610033A896 /* YYClassInfo.m */; };
+		987367DE1E4DBC790033A896 /* LJBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 987367DD1E4DBC790033A896 /* LJBaseModel.m */; };
 		98AA63B41E499FE600AA573D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 98AA63B31E499FE600AA573D /* main.m */; };
 		98AA63B71E499FE600AA573D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 98AA63B61E499FE600AA573D /* AppDelegate.m */; };
 		98AA63BA1E499FE600AA573D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98AA63B91E499FE600AA573D /* ViewController.m */; };
@@ -17,6 +20,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		987367D51E4DBC610033A896 /* NSObject+YYModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+YYModel.h"; sourceTree = "<group>"; };
+		987367D61E4DBC610033A896 /* NSObject+YYModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+YYModel.m"; sourceTree = "<group>"; };
+		987367D71E4DBC610033A896 /* YYClassInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYClassInfo.h; sourceTree = "<group>"; };
+		987367D81E4DBC610033A896 /* YYClassInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYClassInfo.m; sourceTree = "<group>"; };
+		987367D91E4DBC610033A896 /* YYModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYModel.h; sourceTree = "<group>"; };
+		987367DC1E4DBC790033A896 /* LJBaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJBaseModel.h; sourceTree = "<group>"; };
+		987367DD1E4DBC790033A896 /* LJBaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJBaseModel.m; sourceTree = "<group>"; };
 		98AA63AF1E499FE600AA573D /* LSDrawTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LSDrawTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98AA63B31E499FE600AA573D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		98AA63B51E499FE600AA573D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -42,9 +52,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		987367D41E4DBC600033A896 /* YYModel */ = {
+			isa = PBXGroup;
+			children = (
+				987367DC1E4DBC790033A896 /* LJBaseModel.h */,
+				987367DD1E4DBC790033A896 /* LJBaseModel.m */,
+				987367D51E4DBC610033A896 /* NSObject+YYModel.h */,
+				987367D61E4DBC610033A896 /* NSObject+YYModel.m */,
+				987367D71E4DBC610033A896 /* YYClassInfo.h */,
+				987367D81E4DBC610033A896 /* YYClassInfo.m */,
+				987367D91E4DBC610033A896 /* YYModel.h */,
+			);
+			path = YYModel;
+			sourceTree = "<group>";
+		};
 		98AA63A61E499FE600AA573D = {
 			isa = PBXGroup;
 			children = (
+				987367D41E4DBC600033A896 /* YYModel */,
 				98AA63C91E49A0A700AA573D /* LSDrawView.h */,
 				98AA63CA1E49A0A700AA573D /* LSDrawView.m */,
 				98AA63B11E499FE600AA573D /* LSDrawTest */,
@@ -156,9 +181,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				987367DE1E4DBC790033A896 /* LJBaseModel.m in Sources */,
 				98AA63BA1E499FE600AA573D /* ViewController.m in Sources */,
+				987367DA1E4DBC610033A896 /* NSObject+YYModel.m in Sources */,
 				98AA63B71E499FE600AA573D /* AppDelegate.m in Sources */,
 				98AA63B41E499FE600AA573D /* main.m in Sources */,
+				987367DB1E4DBC610033A896 /* YYClassInfo.m in Sources */,
 				98AA63CB1E49A0A700AA573D /* LSDrawView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -316,6 +344,7 @@
 				98AA63C81E499FE600AA573D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
